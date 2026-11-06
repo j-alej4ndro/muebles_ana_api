@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: muebles_ana_api
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/muebles_ana_db   # ← nombre de tu BD
+    username: root                                   # ← tu usuario
+    password: 12345678                                  # ← tu contraseña
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update        # crea/actualiza tablas desde las entidades
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        # SIN dialect: Hibernate 7 lo detecta solo (no copies el MySQL8Dialect de la referencia, rompe)
+
+jwt:
+  secret: QgXmytMHuIXqWlLpEHwY01493xgyj6kOvEOpK0qPrrvT0bR0pIXuD1k8mYz6vH8v   # base64, HS256 (cámbialo en producción)
+  expiration: 36000000   # 10 horas en milisegundos
+
+app:
+  admin:
+    nombre: Administrador
+    correo: admin@mueblesana.com
+    password: Admin1234
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api-muebles   # ← opcional: cambia o bórralo si no quieres prefijo en las URLs
+  error:
+    include-message: always
+    include-binding-errors: always
+
+springdoc:
+  api-docs:
+    path: /api-docs
