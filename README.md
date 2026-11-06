@@ -69,7 +69,7 @@ mysql --version
 ### 1. Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone git@github.com:j-alej4ndro/muebles_ana_api.git
 cd muebles_ana_api
 ```
 
